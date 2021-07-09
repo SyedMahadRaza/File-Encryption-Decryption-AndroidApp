@@ -5,9 +5,13 @@ A Flutter project to create an Android App using Flutter to Encrypt and Decrypt 
 ## Setting Up Git Collaborator
 
 - Creating the project
-- Adding Collaborator
+- Adding Collaborators
 
-## Icon Created : Rupesh Bhasima
+## References Used
+
+- [AES Algorithm Explanation](https://www.youtube.com/watch?v=lM5JsDlmve4)
+
+
 
 
 
