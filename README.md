@@ -1,6 +1,6 @@
-# encryptionapp
+# File Encryption Decryption Flutter App Using AES Algorithm 
 
-A new Flutter project.
+A Flutter project to create an App using Flutter to Encrypt and Decrypt the Files provided by users with the help of AES Algorithm.
 
 ## Getting Started
 
