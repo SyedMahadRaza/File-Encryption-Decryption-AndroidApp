@@ -16,3 +16,21 @@
 
 ### mipmap-xxxhdpi (192*192 pixels)
 ![xxxhdpi](/android/mipmap-xxxhdpi/launch_encryption.png)
+
+
+## File Explorer Icon
+
+### mipmap-hdpi (72*72 pixels)
+![hdpi](/RupeshAI/Icon/android/mipmap-hdpi/fileexplorer.png)
+
+### mipmap-mdpi (48*48 pixels)
+![mdpi](/RupeshAI/Icon/android/mipmap-mdpi/fileexplorer.png)
+
+### mipmap-xhdpi (96*96 pixels)
+![xhdpi](/RupeshAI/Icon/android/mipmap-xhdpi/fileexplorer.png)
+
+### mipmap-xxhdpi (144*144 pixels)
+![xxhdpi](/RupeshAI/Icon/android/mipmap-xxhdpi/fileexplorer.png)
+
+### mipmap-xxxhdpi (192*192 pixels)
+![xxxhdpi](/RupeshAI/Icon/android/mipmap-xxxhdpi/fileexplorer.png)
