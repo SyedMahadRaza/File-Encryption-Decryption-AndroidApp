@@ -15,7 +15,7 @@ Config email: git config --global user.email wilsonshresthaapps@gmail.com
 <pre>
 git init (initialization)
 git remote add origin https://github.com/WilcyWilson/7thSem-FinalProject-EncryptionApp (origin github link)
-git pull remote branch (git pull origin branchname)
+git pull origin branchname(git pull remote branch )
 git branch (list branches in repo)
 git checkout branchname
 git status (displays changes made to the branch)
