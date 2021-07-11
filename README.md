@@ -17,6 +17,7 @@ git init (initialization)
 git remote add origin https://github.com/WilcyWilson/7thSem-FinalProject-EncryptionApp (origin github link)
 git pull remote branch (git pull origin branchname)
 git branch (list branches in repo)
+git checkout branchname
 git status (displays changes made to the branch)
 git add . (adds changes)
 git commit -m ""  (commits changes)
