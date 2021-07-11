@@ -1,10 +1,13 @@
-# Github Sign In Commands
- 
+## Github Sign In Commands
+
+<pre>
 Config Username: git config --global user.name "wilcywilson"
 Config email: git config --global user.email wilsonshresthaapps@gmail.com
+</pre>
 
-# Github Commands to get started
+## Commands to get started
 
+<pre>
 git init (initialization)
 git remote add origin https://github.com/WilcyWilson/7thSem-FinalProject-EncryptionApp (origin github link)
 git pull <remote> <branch> (git pull origin branchname)
@@ -17,9 +20,11 @@ git push -u origin master (push to current branch)
 Now, to add a different branch make a different folder to make things easier. And, repeat the above steps.
 To push to branch next time just type "git push"
 New Folder for every new branch
+</pre>
 
-# Github Setting Up a New Branch (Preferably in a new folder in pc to make things easy)
+## Setting Up a New Extending Branch (Preferably in a new folder in pc to make things easy)
 
+<pre>
 git init
 git remote add origin https://github.com/WilcyWilson/7thSem-FinalProject-EncryptionApp
 git pull origin splashscreen (Pulling the branch you want to add new features to.)
@@ -28,3 +33,4 @@ git branch (To check your current branch and available branches)
 git push -u origin uisetup (Makes uisetup branch as upstream)
 
 After this new branch will be created in the github website too.
+</pre>
