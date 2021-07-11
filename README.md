@@ -1,4 +1,8 @@
 # Github Workflow
+
+## Explorer Workflow Pic
+<img src="workflow.png" width="400" height="270"> 
+
 ## Github Sign In Commands
 
 <pre>
