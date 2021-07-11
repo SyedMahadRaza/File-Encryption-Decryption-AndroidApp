@@ -21,7 +21,7 @@ git checkout branchname
 git status (displays changes made to the branch)
 git add . (adds changes)
 git commit -m ""  (commits changes)
-git push -u origin master (push to current branch)
+git push -u origin branchname (push to current branch)
 
 Now, to add a different branch make a different folder to make things easier. And, repeat the above steps.
 To push to branch next time just type "git push"
