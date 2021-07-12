@@ -55,6 +55,13 @@ class _NinjaCardState extends State<NinjaCard> {
       _fileName =
           _paths != null ? _paths!.map((e) => e.name).toString() : '...';
     });
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    if (result != null) {
+      PlatformFile file = result.files.first;
+      print(file.name);
+    } else {
+      // User canceled the picker
+    }
   }
 
   @override
