@@ -1,7 +1,7 @@
+import 'package:encryptionapp/filename.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:encryptionapp/presentation/my_flutter_app_icons.dart';
-import 'package:flutter/services.dart';
 import 'build_encrypt_button.dart';
 import 'build_decrypt_button.dart';
 import 'enter_password.dart';
@@ -14,10 +14,14 @@ class NinjaCard extends StatefulWidget {
 }
 
 class _NinjaCardState extends State<NinjaCard> {
+  String _fileName = "File Not Selected";
   void _openFileExplorer() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
     if (result != null) {
       PlatformFile file = result.files.first;
+      setState(() {
+        _fileName = file.name;
+      });
       print(file.name);
     } else {
       // User canceled the picker
@@ -43,6 +47,7 @@ class _NinjaCardState extends State<NinjaCard> {
 
             child: Form(
               child: Column(children: [
+                FileName(_fileName),
                 EnterPassword(),
                 BuildEncryptButton(), // Moved to another class for each
                 BuildDecryptButton(),
