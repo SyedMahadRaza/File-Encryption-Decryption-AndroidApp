@@ -1,6 +1,8 @@
-# Screenshot of current state of Application
+# Video Demo of File Selection
 
-<img src="screenshot/Sample.jpg" width="270" height="600">
+https://user-images.githubusercontent.com/40534141/125358412-93d1f500-e388-11eb-92a1-67aef724d59c.mp4
+
+
 
 
 
