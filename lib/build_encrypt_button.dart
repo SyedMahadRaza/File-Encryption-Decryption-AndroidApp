@@ -4,37 +4,24 @@ class BuildEncryptButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: EdgeInsets.fromLTRB(20, 50, 20, 20),
         child: Column(
-      children: [
-        
-         ElevatedButton(
-          // child: Padding( padding: EdgeInsets.all(30),),
-          
-            key: Key('encrypt'),
-            child: Text('Encrypt', 
-            
-            style: TextStyle(
-              fontSize: 20.0,
-               
-              ),
-               
-              ),
-              
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0),
-                )
-              )
-              ),
-            onPressed: () {}),
-            
-        TextButton(
-            child: Text('Encrypt the file', style: TextStyle(fontSize: 20.0)),
-            onPressed: () {}),
-        
-      ],
-        
-    ));
+          children: [
+            ElevatedButton(
+                key: Key('encrypt'),
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text('Encrypt', style: TextStyle(fontSize: 30.0)),
+                ),
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ))),
+                onPressed: () {}),
+          ],
+        ));
   }
 }
