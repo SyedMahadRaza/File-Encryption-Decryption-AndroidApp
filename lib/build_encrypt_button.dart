@@ -6,14 +6,35 @@ class BuildEncryptButton extends StatelessWidget {
     return Container(
         child: Column(
       children: [
-        ElevatedButton(
+        
+         ElevatedButton(
+          // child: Padding( padding: EdgeInsets.all(30),),
+          
             key: Key('encrypt'),
-            child: Text('Encrypt', style: TextStyle(fontSize: 20.0)),
+            child: Text('Encrypt', 
+            
+            style: TextStyle(
+              fontSize: 20.0,
+               
+              ),
+               
+              ),
+              
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                )
+              )
+              ),
             onPressed: () {}),
+            
         TextButton(
             child: Text('Encrypt the file', style: TextStyle(fontSize: 20.0)),
             onPressed: () {}),
+        
       ],
+        
     ));
   }
 }
