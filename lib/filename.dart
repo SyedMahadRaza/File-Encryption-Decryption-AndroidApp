@@ -12,7 +12,11 @@ class FileName extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(60, 20, 60, 20),
           child: Text(
             fileName,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.green,
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),
           ),
         )
       ],

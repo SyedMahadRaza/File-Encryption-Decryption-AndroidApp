@@ -42,7 +42,7 @@ class _NinjaCardState extends State<NinjaCard> {
         body: Center(
           child: Container(
             // padding: EdgeInsets.all(16.0),
-            height: 400.0,
+            height: 550.0,
             width: 400.0,
 
             child: Form(
