@@ -18,12 +18,12 @@ class EnterPassword extends StatelessWidget {
         Padding(
           padding: EdgeInsets.fromLTRB(60, 20, 60, 20),
           child: TextField(
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white)),
+                    borderSide: BorderSide(color: Colors.black)),
                 labelText: 'Password',
-                labelStyle: TextStyle(fontSize: 15, color: Colors.white)),
+                labelStyle: TextStyle(fontSize: 15, color: Colors.black)),
             keyboardType: TextInputType.number,
           ),
         )
