@@ -68,6 +68,8 @@ class _NinjaCardState extends State<NinjaCard> {
             child: Form(
               key: _formKey,
               autovalidateMode: AutovalidateMode.always,
+
+              // FileName
               child: Column(
                 children: [
                   Padding(
@@ -81,6 +83,8 @@ class _NinjaCardState extends State<NinjaCard> {
                       ),
                     ),
                   ),
+
+                  // Password Field
                   Padding(
                     padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
                     child: TextFormField(
@@ -101,6 +105,8 @@ class _NinjaCardState extends State<NinjaCard> {
                       keyboardType: TextInputType.text,
                     ),
                   ),
+
+                  // Encrypt Button
                   Container(
                     margin: EdgeInsets.fromLTRB(20, 30, 20, 20),
                     child: ElevatedButton(
@@ -126,6 +132,8 @@ class _NinjaCardState extends State<NinjaCard> {
                           }
                         }),
                   ),
+
+                  //Decrypt Button
                   Container(
                     child: ElevatedButton(
                         key: Key('decrypt'),
@@ -148,6 +156,8 @@ class _NinjaCardState extends State<NinjaCard> {
             ),
           ),
         ),
+
+        // floatingActionButton
         floatingActionButton: FloatingActionButton.extended(
           // Moved FloatingActionButton to bottom right
           onPressed: () => _openFileExplorer(),
