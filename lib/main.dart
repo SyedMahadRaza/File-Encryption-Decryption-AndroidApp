@@ -14,6 +14,7 @@ class NinjaCard extends StatefulWidget {
 }
 
 class _NinjaCardState extends State<NinjaCard> {
+  final _formKey = GlobalKey<FormState>();
   String _fileName = "File Not Selected";
   void _openFileExplorer() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
@@ -50,6 +51,7 @@ class _NinjaCardState extends State<NinjaCard> {
             width: 400.0,
 
             child: Form(
+              key: _formKey,
               child: Column(children: [
                 FileName(_fileName),
                 EnterPassword(),

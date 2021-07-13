@@ -17,14 +17,20 @@ class EnterPassword extends StatelessWidget {
 
         Padding(
           padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
-          child: TextField(
+          child: TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black)),
                 labelText: 'Password',
                 labelStyle: TextStyle(fontSize: 20.0, color: Colors.black)),
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.text,
           ),
         )
       ],

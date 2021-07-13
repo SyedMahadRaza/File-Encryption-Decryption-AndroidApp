@@ -20,7 +20,12 @@ class BuildEncryptButton extends StatelessWidget {
                         RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ))),
-                onPressed: () {}),
+                onPressed: () {
+                  // if (_formKey.currentState!.validate()) {
+                  //   ScaffoldMessenger.of(context).showSnackBar(
+                  //       SnackBar(content: Text('Processing Data')));
+                  // }
+                }),
           ],
         ));
   }
