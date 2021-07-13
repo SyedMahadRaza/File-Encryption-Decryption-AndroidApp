@@ -1,10 +1,6 @@
-// import 'package:encryptionapp/filename.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:encryptionapp/presentation/my_flutter_app_icons.dart';
-// import 'build_encrypt_button.dart';
-// import 'build_decrypt_button.dart';
-// import 'enter_password.dart';
 
 void main() => runApp(NinjaCard()); // Moved Scaffold to class NinjaCard
 
