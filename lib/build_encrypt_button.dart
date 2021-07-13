@@ -25,3 +25,4 @@ class BuildEncryptButton extends StatelessWidget {
         ));
   }
 }
+

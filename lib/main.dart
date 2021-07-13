@@ -11,7 +11,7 @@ class NinjaCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Color.fromARGB(0,236, 240, 228),
         appBar: AppBar(
           title: Text('AES Encryption and Decryption'),
           centerTitle: true,
