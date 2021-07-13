@@ -32,7 +32,7 @@ class _NinjaCardState extends State<NinjaCard> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Color.fromARGB(255, 148, 35, 255),
         appBar: AppBar(
           title: Text('AES Encryption and Decryption'),
           centerTitle: true,
