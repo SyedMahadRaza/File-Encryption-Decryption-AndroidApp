@@ -4,7 +4,7 @@ class BuildDecryptButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(15.0),
+        margin: EdgeInsets.all(5.0),
         child: Column(
           children: [
             ElevatedButton(

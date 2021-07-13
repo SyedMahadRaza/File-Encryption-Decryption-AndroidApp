@@ -4,7 +4,7 @@ class BuildEncryptButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.fromLTRB(20, 50, 20, 20),
+        margin: EdgeInsets.fromLTRB(20, 30, 20, 20),
         child: Column(
           children: [
             ElevatedButton(

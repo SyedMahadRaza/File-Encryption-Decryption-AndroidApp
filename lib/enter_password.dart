@@ -16,14 +16,14 @@ class EnterPassword extends StatelessWidget {
         // Padding(padding: const EdgeInsets.symmetric(vertical: 16.0),)
 
         Padding(
-          padding: EdgeInsets.fromLTRB(60, 20, 60, 20),
+          padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
           child: TextField(
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black)),
                 labelText: 'Password',
-                labelStyle: TextStyle(fontSize: 15, color: Colors.black)),
+                labelStyle: TextStyle(fontSize: 20.0, color: Colors.black)),
             keyboardType: TextInputType.number,
           ),
         )

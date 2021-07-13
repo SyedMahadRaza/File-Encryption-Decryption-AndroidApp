@@ -36,7 +36,7 @@ class _NinjaCardState extends State<NinjaCard> {
         appBar: AppBar(
           title: Text(
             'AES Encryption and Decryption',
-           style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
           // backgroundColor: Colors.grey[850],

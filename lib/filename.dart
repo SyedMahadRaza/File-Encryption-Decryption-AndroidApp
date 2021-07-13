@@ -9,7 +9,7 @@ class FileName extends StatelessWidget {
         child: Column(
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(60, 20, 60, 20),
+          padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
           child: Text(
             fileName,
             style: TextStyle(
