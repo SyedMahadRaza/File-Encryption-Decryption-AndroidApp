@@ -39,6 +39,7 @@ class _NinjaCardState extends State<NinjaCard> {
       } else {
         setState(() {
           _fileName = "File Size Exceeded 2 MB";
+          _fileInfo = null;
         });
       }
       print(file.name);
