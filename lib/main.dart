@@ -1,3 +1,7 @@
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:encrypt/encrypt.dart' as enc;
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:encryptionapp/presentation/my_flutter_app_icons.dart';
@@ -10,10 +14,12 @@ class NinjaCard extends StatefulWidget {
 }
 
 class _NinjaCardState extends State<NinjaCard> {
+  bool _isGranted = true;
   final myController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   String _fileName = "File Not Selected";
   PlatformFile? _fileInfo;
+  File? superFile;
   final int fileLimitation = 2000000;
 
   @override
@@ -44,8 +50,48 @@ class _NinjaCardState extends State<NinjaCard> {
     }
   }
 
+  Future<String> _writeData(dataToWrite, fileNameWithPath) async {
+    print("Writting Data...");
+    File f = File(fileNameWithPath);
+    await f.writeAsBytes(dataToWrite);
+    return f.absolute.toString();
+  }
+
+  Future<Directory> get getExternalVisibleDir async {
+    if (await Directory('/storage/emulated/0/MyEncFolder').exists()) {
+      final externalDir = Directory('/storage/emulated/0/MyEncFolder');
+      return externalDir;
+    } else {
+      await Directory('/storage/emulated/0/MyEncFolder')
+          .create(recursive: true);
+      final externalDir = Directory('/storage/emulated/0/MyEncFolder');
+      return externalDir;
+    }
+  }
+
+  requestStoragePermission() async {
+    if (!await Permission.storage.isGranted) {
+      PermissionStatus result = await Permission.storage.request();
+      if (result.isGranted) {
+        setState(() {
+          _isGranted = true;
+        });
+      } else {
+        setState(() {
+          _isGranted = false;
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    requestStoragePermission();
+    // AES Required Variables
+    final myKey = enc.Key.fromUtf8('TechWithVPTechWithVPTechWithVP12');
+    final myIv = enc.IV.fromUtf8("VivekPanchal1122");
+    final myEncrypter = enc.Encrypter(enc.AES(myKey));
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 242, 234, 223),
@@ -123,12 +169,22 @@ class _NinjaCardState extends State<NinjaCard> {
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
                             ))),
-                        onPressed: () {
-                          if (_formKey.currentState!.validate() &&
-                              _fileInfo?.extension != null) {
-                            setState(() {
-                              _fileName = myController.text;
-                            });
+                        onPressed: () async {
+                          if (_isGranted) {
+                            Directory d = await getExternalVisibleDir;
+                            if (_formKey.currentState!.validate() &&
+                                _fileInfo?.extension != null) {
+                              var encResult = myEncrypter.encrypt(
+                                  _fileInfo!.bytes.toString(),
+                                  iv: myIv);
+                              String p = await _writeData(
+                                  encResult, d.path + '/$_fileName.aes');
+                              print("file encrypted successfully $p");
+                            } else {
+                              print("file encryption unsuccessful");
+                            }
+                          } else {
+                            print("Permission not granted");
                           }
                         }),
                   ),
