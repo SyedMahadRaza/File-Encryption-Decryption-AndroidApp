@@ -1,10 +1,8 @@
-# Run using this on the terminal
+# List of Bugs to be Fixed
 
-## flutter run --no-sound-null-safety
+## 1. Migrating the imported Library
 
-### Video Demo of File Selection
-
-https://user-images.githubusercontent.com/40534141/125358412-93d1f500-e388-11eb-92a1-67aef724d59c.mp4
+<img src="bugreportscreenshots/migrate" width="700" height="500">
 
 
 
