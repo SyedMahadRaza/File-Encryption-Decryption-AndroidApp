@@ -1,7 +1,6 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:encrypt/encrypt.dart' as enc;
+import 'package:aes_crypt/aes_crypt.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:encryptionapp/presentation/my_flutter_app_icons.dart';
@@ -50,13 +49,6 @@ class _NinjaCardState extends State<NinjaCard> {
     }
   }
 
-  Future<String> _writeData(dataToWrite, fileNameWithPath) async {
-    print("Writting Data...");
-    File f = File(fileNameWithPath);
-    await f.writeAsBytes(dataToWrite);
-    return f.absolute.toString();
-  }
-
   Future<Directory> get getExternalVisibleDir async {
     if (await Directory('/storage/emulated/0/MyEncFolder').exists()) {
       final externalDir = Directory('/storage/emulated/0/MyEncFolder');
@@ -87,10 +79,6 @@ class _NinjaCardState extends State<NinjaCard> {
   @override
   Widget build(BuildContext context) {
     requestStoragePermission();
-    // AES Required Variables
-    final myKey = enc.Key.fromUtf8('TechWithVPTechWithVPTechWithVP12');
-    final myIv = enc.IV.fromUtf8("VivekPanchal1122");
-    final myEncrypter = enc.Encrypter(enc.AES(myKey));
 
     return MaterialApp(
       home: Scaffold(
@@ -174,12 +162,12 @@ class _NinjaCardState extends State<NinjaCard> {
                             Directory d = await getExternalVisibleDir;
                             if (_formKey.currentState!.validate() &&
                                 _fileInfo?.extension != null) {
-                              var encResult = myEncrypter.encrypt(
-                                  _fileInfo!.bytes.toString(),
-                                  iv: myIv);
-                              String p = await _writeData(
-                                  encResult, d.path + '/$_fileName.aes');
-                              print("file encrypted successfully $p");
+                              var crypt = AesCrypt();
+                              crypt.setPassword(myController.text);
+                              crypt.setOverwriteMode(AesCryptOwMode.on);
+                              crypt.encryptFileSync(
+                                  _fileInfo!.path, '${d.path}/$_fileName.aes');
+                              print("file encrypted successfully");
                             } else {
                               print("file encryption unsuccessful");
                             }
@@ -205,7 +193,16 @@ class _NinjaCardState extends State<NinjaCard> {
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
                             ))),
-                        onPressed: () {}),
+                        onPressed: () async {
+                          if (_isGranted) {
+                            Directory d = await getExternalVisibleDir;
+                            var crypt = AesCrypt();
+                            crypt.setPassword(myController.text);
+                            crypt.setOverwriteMode(AesCryptOwMode.on);
+                            crypt.decryptFileSync('${d.path}/$_fileName');
+                            print("file dencrypted successfully");
+                          }
+                        }),
                   ),
                 ],
               ),
