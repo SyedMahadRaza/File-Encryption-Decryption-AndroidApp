@@ -2,6 +2,10 @@ Run using this on the terminal
 
 flutter run --no-sound-null-safety
 
+flutter pub get
+
+# Adding Flutter Toast
+
 # List of Bugs to be Fixed
 
 ## 1. Migrating the imported Library
